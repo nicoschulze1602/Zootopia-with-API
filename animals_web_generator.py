@@ -52,38 +52,41 @@ def get_animals_data(data):
 
 def main():
     """Loads data, processes it, and writes HTML output."""
-    name = 'Fox'
-    api_url = 'https://api.api-ninjas.com/v1/animals?name={}'.format(name)
-    response = requests.get(api_url,
-                            headers={'X-Api-Key': 'iWcJikrDu06TpQsTIkhWfA==A2V9t0BMUCugf7Yh'})
-    if response.status_code == requests.codes.ok:
-        data = response.json()
-        animals_data = get_animals_data(data).strip()
-    else:
-        print("Error:", response.status_code, response.text)
-    """try:
-        data = load_data('animals_data.json')
-    except FileNotFoundError:
-        print("❌ Error: 'animals_data.json' file not found.")
-        return
-    except json.JSONDecodeError:
-        print("❌ Error: 'animals_data.json' contains no valid JSON.")
-        return"""
+    while True:
+        name = input('Enter the name of an animal: ').strip()
+        if not name:
+            print('can not be empty')
+        api_url = 'https://api.api-ninjas.com/v1/animals?name={}'.format(name)
+        response = requests.get(api_url,
+                                headers={'X-Api-Key': 'iWcJikrDu06TpQsTIkhWfA==A2V9t0BMUCugf7Yh'})
+        if response.status_code == requests.codes.ok:
+            data = response.json()
+            animals_data = get_animals_data(data).strip()
+        else:
+            print("Error:", response.status_code, response.text)
+        """try:
+            data = load_data('animals_data.json')
+        except FileNotFoundError:
+            print("❌ Error: 'animals_data.json' file not found.")
+            return
+        except json.JSONDecodeError:
+            print("❌ Error: 'animals_data.json' contains no valid JSON.")
+            return"""
 
-    try:
-        with open('animals_template.html', 'r') as file:
-            template = file.read()
-    except FileNotFoundError:
-        print("❌ Error: 'animals_template.html' file not found.")
-        return
+        try:
+            with open('animals_template.html', 'r') as file:
+                template = file.read()
+        except FileNotFoundError:
+            print("❌ Error: 'animals_template.html' file not found.")
+            return
 
-    try:
-        with open('animals.html', 'w', encoding="utf-8") as file:
-            new_html = template.replace('__REPLACE_ANIMALS_INFO__', animals_data)
-            file.write(new_html)
-        print("✅ File 'animals.html'was successfully created/updated!")
-    except Exception as e:
-        print(f"❌ Error creating file: {e}")
+        try:
+            with open('animals.html', 'w', encoding="utf-8") as file:
+                new_html = template.replace('__REPLACE_ANIMALS_INFO__', animals_data)
+                file.write(new_html)
+            print("✅ File 'animals.html'was successfully created/updated!")
+        except Exception as e:
+            print(f"❌ Error creating file: {e}")
 
 
 if __name__ == '__main__':
