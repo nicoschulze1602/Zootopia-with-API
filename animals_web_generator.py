@@ -52,7 +52,6 @@ def get_animals_data(data):
 
 def main():
     """Loads data, processes it, and writes HTML output."""
-    global animals_data
     name = 'Fox'
     api_url = 'https://api.api-ninjas.com/v1/animals?name={}'.format(name)
     response = requests.get(api_url,
@@ -78,10 +77,9 @@ def main():
         print("❌ Error: 'animals_template.html' file not found.")
         return
 
-    new_html = template.replace('__REPLACE_ANIMALS_INFO__', animals_data)
-
     try:
         with open('animals.html', 'w', encoding="utf-8") as file:
+            new_html = template.replace('__REPLACE_ANIMALS_INFO__', animals_data)
             file.write(new_html)
         print("✅ File 'animals.html'was successfully created/updated!")
     except Exception as e:
