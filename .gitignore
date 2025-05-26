@@ -1,1 +1,24 @@
+# 👉 Versteckte Umgebungsdateien
 .env
+
+# 👉 Generierte HTML-Dateien
+animals.html
+
+# 👉 Bytecode-Dateien / Cache von Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 👉 Temporäre Dateien & Logs
+*.log
+*.tmp
+
+# 👉 IDE-spezifische Dateien
+.vscode/
+.idea/
+
+# 👉 System-Dateien (z. B. von macOS)
+.DS_Store
+
+# 👉 Jupyter Notebooks Checkpoints (falls du mal welche nutzt)
+.ipynb_checkpoints/
