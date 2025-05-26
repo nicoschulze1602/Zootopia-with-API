@@ -1,15 +1,5 @@
-import json
-import requests
-import os
-from dotenv import load_dotenv
 import html
-
-load_dotenv()
-
-def load_data(file_path):
-    """Load JSON data from a local file."""
-    with open(file_path, "r", encoding="utf-8") as handle:
-        return json.load(handle)
+from data_fetcher import fetch_data
 
 
 def serialize_animal(animal_obj):
@@ -66,23 +56,6 @@ def get_animal_name():
         return name
 
 
-def fetch_animal_data(name, api_key):
-    """Fetch animal data from the API. Returns a list of animal objects, or None"""
-    api_url = f'https://api.api-ninjas.com/v1/animals?name={name}'
-    response = requests.get(api_url, headers={'X-Api-Key': api_key})
-
-    if response.status_code == requests.codes.ok:
-        data = response.json()
-        if not data:
-            # Wenn kein Tier gefunden wurde, zeige eine Nachricht auf der Webseite
-            return f'<p class="no-results">Sorry! The animal "{html.escape(name)}" doesn\'t exist.</p>'
-        return get_animals_data(data).strip()
-    else:
-        print("API Error:", response.status_code, response.text)
-        return None
-
-
-
 def load_template(template_path='animals_template.html'):
     """Load the HTML template file."""
     try:
@@ -91,7 +64,6 @@ def load_template(template_path='animals_template.html'):
     except FileNotFoundError:
         print(f"❌ Error: '{template_path}' file not found.")
         return None
-
 
 
 def write_output_file(html_output, filepath='animals.html'):
@@ -104,18 +76,20 @@ def write_output_file(html_output, filepath='animals.html'):
     except Exception as e:
         print(f"❌ Error creating file: {e}")
 
+
 def main():
-    api_key = os.getenv("API_KEY")
-    if not api_key:
-        print("❌ Error: API key not found. Please check your .env file.")
-        return
     name = get_animal_name()
     if not name:
         return
 
-    animals_data = fetch_animal_data(name, api_key)
-    if not animals_data:
+    raw_data = fetch_data(name)
+    if raw_data is None:
         return
+
+    if not raw_data:
+        animals_data = f'<p class="no-results">Sorry! The animal "{html.escape(name)}" doesn\'t exist.</p>'
+    else:
+        animals_data = get_animals_data(raw_data).strip()
 
     template = load_template()
     if not template:
