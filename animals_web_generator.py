@@ -104,13 +104,11 @@ def write_output_file(html_output, filepath='animals.html'):
     except Exception as e:
         print(f"❌ Error creating file: {e}")
 
-
 def main():
     api_key = os.getenv("API_KEY")
     if not api_key:
         print("❌ Error: API key not found. Please check your .env file.")
         return
-
     name = get_animal_name()
     if not name:
         return

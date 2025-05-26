@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animal Cards</title>
+    <style>
+        :root {
+            --gray-darker: #444444;
+            --gray-dark:   #696969;
+            --gray:        #999999;
+            --gray-light:  #cccccc;
+            --gray-lighter:#ececec;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFEFD5;
+            font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            color: var(--gray-darker);
+        }
+
+        body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .cards__item {
+            background-color: #FFFAF0;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            overflow: hidden;
+            padding: 1.5rem;
+            width: 280px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .cards__item:hover {
+            transform: scale(1.03);
+        }
+
+        .card__title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--gray-dark);
+            text-transform: uppercase;
+        }
+
+        .card__text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .card__list {
+            padding-left: 1rem;
+        }
+
+        .card__list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .no-results {
+            background-color: #fff8dc;
+            border: 1px solid #daa520;
+            padding: 1rem;
+            font-size: 1.1rem;
+            color: #8b4513;
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(218,165,32, 0.2);
+            }
+
+    </style>
+</head>
+<body>
+    <h1>My Animal Repository</h1>
+    <ul class="cards">
+        <li class="cards__item">
+  <div class="card">
+    <div class="card__title">African Wild Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Carnivore</li>
+        <li><strong>Location:</strong> Africa</li>
+        <li><strong>Lifespan:</strong> 10 - 13 years</li>
+        <li><strong>Group:</strong> Mammal</li>
+        <li><strong>Color:</strong> BrownGreyRedBlackWhiteGoldTan</li>
+        <li><strong>Skin Type:</strong> Fur</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">American Bulldog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> North-America</li>
+        <li><strong>Type:</strong> Mastiff</li>
+        <li><strong>Group:</strong> Dog</li>
+        <li><strong>Color:</strong> BrownRedBlackWhiteTanBrindle</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">American Dog Tick</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> North-America</li>
+        <li><strong>Type:</strong> Arachnid</li>
+        <li><strong>Lifespan:</strong> 1-5 years</li>
+        <li><strong>Group:</strong> Ticks</li>
+        <li><strong>Color:</strong> Brown</li>
+        <li><strong>Skin Type:</strong> Exoskeleton</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">American Eskimo Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Lifespan:</strong> 13 - 15 years</li>
+        <li><strong>Group:</strong> Dog</li>
+        <li><strong>Color:</strong> White</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Anatolian Shepherd Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Lifespan:</strong> 11-13 years</li>
+        <li><strong>Group:</strong> Guard</li>
+        <li><strong>Color:</strong> BrownFawnRedBlueWhiteBrindleCream</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Appenzeller Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Lifespan:</strong> 12 – 14 years</li>
+        <li><strong>Group:</strong> Sennenhund</li>
+        <li><strong>Color:</strong> BlackWhiteTan</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Australian Bulldog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Oceania</li>
+        <li><strong>Lifespan:</strong> 12 years</li>
+        <li><strong>Color:</strong> FawnRedBrindleOrangePeachBlack-Brown</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Australian Cattle Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Oceania</li>
+        <li><strong>Lifespan:</strong> 13-15 years</li>
+        <li><strong>Group:</strong> Herd Dog</li>
+        <li><strong>Color:</strong> GreyRedBlack</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Australian Kelpie Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Oceania</li>
+        <li><strong>Lifespan:</strong> 10 to 13 years</li>
+        <li><strong>Group:</strong> Herd Dog</li>
+        <li><strong>Color:</strong> BrownRedBlackTan</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Basenji Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Africa</li>
+        <li><strong>Lifespan:</strong> 12-14 years</li>
+        <li><strong>Color:</strong> BrownRedBlackWhiteTanBrindle</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Bernese Mountain Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Group:</strong> Sennenhund</li>
+        <li><strong>Color:</strong> BlackWhiteTan</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Blue Lacy Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> North-America</li>
+        <li><strong>Group:</strong> Herd</li>
+        <li><strong>Color:</strong> BrownGreyFawnBlueWhiteTanCream</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Bolognese Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Group:</strong> Gun Dog</li>
+        <li><strong>Color:</strong> White</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Boxer Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Group:</strong> Mastiff</li>
+        <li><strong>Color:</strong> BrownBlackTan</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Brown Dog Tick</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Africa</li>
+        <li><strong>Type:</strong> Arachnid</li>
+        <li><strong>Lifespan:</strong> 3-18 months</li>
+        <li><strong>Group:</strong> Ticks</li>
+        <li><strong>Color:</strong> Brown</li>
+        <li><strong>Skin Type:</strong> Exoskeleton</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Bulldog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Group:</strong> Mastiff</li>
+        <li><strong>Color:</strong> BrownFawnBlackWhiteTan</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Canaan Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Asia</li>
+        <li><strong>Lifespan:</strong> 15 years</li>
+        <li><strong>Group:</strong> South</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Canadian Eskimo Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> North-America</li>
+        <li><strong>Lifespan:</strong> 10 to 15 years</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Carolina Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> North-America</li>
+        <li><strong>Lifespan:</strong> 19 years</li>
+        <li><strong>Group:</strong> South</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Catalan Sheepdog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Lifespan:</strong> 13 years</li>
+        <li><strong>Color:</strong> BrownGreyFawnRedBlackTan</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Chinese Crested Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Asia</li>
+        <li><strong>Lifespan:</strong> 13 years</li>
+        <li><strong>Group:</strong> South</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Czechoslovakian Wolfdog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Type:</strong> mammal</li>
+        <li><strong>Lifespan:</strong> 10-15 years</li>
+        <li><strong>Color:</strong> GreySilver</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Dog Tick</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Africa</li>
+        <li><strong>Type:</strong> Arachnid</li>
+        <li><strong>Lifespan:</strong> 2-3 years</li>
+        <li><strong>Color:</strong> Brown</li>
+        <li><strong>Skin Type:</strong> Exoskeleton</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Dogo Argentino</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> South-America</li>
+        <li><strong>Lifespan:</strong> 13 years</li>
+        <li><strong>Group:</strong> Mastiff</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Dogue De Bordeaux</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Lifespan:</strong> 8 years</li>
+        <li><strong>Group:</strong> Mastiff</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">English Bulldog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Lifespan:</strong> 8-10 years</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Entlebucher Mountain Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Lifespan:</strong> 12 years</li>
+        <li><strong>Group:</strong> Sennenhund</li>
+        <li><strong>Color:</strong> BlackWhiteTan</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Eskimo Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> North-America</li>
+        <li><strong>Lifespan:</strong> 14 years</li>
+        <li><strong>Group:</strong> North</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Estrela Mountain Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Lifespan:</strong> 16 years</li>
+        <li><strong>Group:</strong> Guard</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Formosan Mountain Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Asia</li>
+        <li><strong>Type:</strong> mammal</li>
+        <li><strong>Lifespan:</strong> 10-13 years</li>
+        <li><strong>Color:</strong> FawnBlackWhiteBrindle</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">French Bulldog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Lifespan:</strong> 10 to 12 years</li>
+        <li><strong>Group:</strong> Mastiff</li>
+        <li><strong>Color:</strong> FawnWhiteTanBrindle</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Greater Swiss Mountain Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Lifespan:</strong> 12 years</li>
+        <li><strong>Group:</strong> Sennenhund</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Greenland Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> North-America</li>
+        <li><strong>Lifespan:</strong> 12 years</li>
+        <li><strong>Color:</strong> GreyBlack</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Icelandic Sheepdog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Type:</strong> mammal</li>
+        <li><strong>Lifespan:</strong> 12-14 years</li>
+        <li><strong>Color:</strong> GreyFawnRedBlackWhiteGoldTanCreamChocolate</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Moscow Watchdog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Eurasia</li>
+        <li><strong>Lifespan:</strong> 9 to 11 years</li>
+        <li><strong>Color:</strong> RedBlackWhite</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Northern Inuit Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Carnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Lifespan:</strong> 12 to 15 years</li>
+        <li><strong>Color:</strong> GreyBlackWhite</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Old English Sheepdog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Lifespan:</strong> 12 years</li>
+        <li><strong>Group:</strong> Herd</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Polish Lowland Sheepdog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Lifespan:</strong> 12 to 14 years</li>
+        <li><strong>Color:</strong> BrownGreyBlackWhiteBeige</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Prairie Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Central-America</li>
+        <li><strong>Type:</strong> Mammal</li>
+        <li><strong>Lifespan:</strong> 3-4 years on average</li>
+        <li><strong>Color:</strong> BrownGreyBlackWhiteTan</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Raccoon Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Carnivore</li>
+        <li><strong>Location:</strong> Asia</li>
+        <li><strong>Type:</strong> Mammal</li>
+        <li><strong>Lifespan:</strong> 3 - 8 years</li>
+        <li><strong>Color:</strong> BrownYellowBlackTan</li>
+        <li><strong>Skin Type:</strong> Fur</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Russian Bear Dog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Eurasia</li>
+        <li><strong>Lifespan:</strong> 10 to 12 years</li>
+        <li><strong>Color:</strong> BrownGreyBlackCream</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Saarloos Wolfdog</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Europe</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Spiny Dogfish</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Carnivore</li>
+        <li><strong>Location:</strong> Ocean</li>
+        <li><strong>Lifespan:</strong> Average of 20 to 24 years, but can live up to 50 years</li>
+        <li><strong>Color:</strong> BrownGreyBlackWhite</li>
+        <li><strong>Skin Type:</strong> Smooth</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Viper shark (dogfish)</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Carnivore</li>
+        <li><strong>Location:</strong> Ocean</li>
+        <li><strong>Type:</strong> Fish</li>
+        <li><strong>Color:</strong> Black</li>
+        <li><strong>Skin Type:</strong> Rough</li>
+      </ul>
+    </div>
+  </div>
+</li>
+    </ul>
+</body>
+</html>

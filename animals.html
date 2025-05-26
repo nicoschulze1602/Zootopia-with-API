@@ -1,0 +1,219 @@
+<html>
+    <head>
+        <style>
+        @gray-darker:               #444444;
+        @gray-dark:                 #696969;
+        @gray:                      #999999;
+        @gray-light:                #cccccc;
+        @gray-lighter:              #ececec;
+        @gray-lightest:             lighten(@gray-lighter,4%);
+
+
+        html {
+          background-color: #FFF;
+        }
+
+        body {
+          font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+          font-size: 40px;
+          letter-spacing: 0;
+          padding: 2rem;
+          background-color: #FFEFD5;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          -moz-font-feature-settings: "liga" on;
+          width: 900px;
+          margin-bottom: 2rem;
+        }
+
+        h1 {
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 40px;
+          color: #444444;
+          margin-bottom: 2rem;
+        }
+
+
+
+        .cards {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1.5rem;
+          padding: 0;
+          list-style: none;
+        }
+
+        .cards__item {
+          background-color: #FFFAF0;
+          border-radius: 0.25rem;
+          box-shadow: 0 2px 15px rgba(0,0,0,0.25);
+          overflow: hidden;
+          padding: 1.5rem;
+          width: 300px;
+          transition: transform 0.2s;
+        }
+
+        .cards__item:hover {
+          transform: scale(1.02);
+        }
+
+        .card__title {
+          color: @gray-dark;
+          font-size: 1.35rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+          text-transform: uppercase;
+        }
+
+        .card__text {
+          flex: 1 1 auto;
+          font-size: 0.95rem;
+          line-height: 2;
+          margin-bottom: 1.25rem;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>My Animal Repository</h1>
+        <ul class="cards">
+            <li class="cards__item">
+  <div class="card">
+    <div class="card__title">Howler Monkey</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Central-America</li>
+        <li><strong>Type:</strong> Mammal</li>
+        <li><strong>Lifespan:</strong> 15-20 years</li>
+        <li><strong>Color:</strong> BrownBlackTan</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Monkey</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Africa</li>
+        <li><strong>Type:</strong> Mammal</li>
+        <li><strong>Lifespan:</strong> 10-30 years</li>
+        <li><strong>Color:</strong> BrownGreyYellowBlackWhiteTan</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Patas Monkey</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Africa</li>
+        <li><strong>Lifespan:</strong> 12 - 20 years</li>
+        <li><strong>Group:</strong> Mammal</li>
+        <li><strong>Color:</strong> BrownGreyRedBlackWhite</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Proboscis Monkey</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Asia</li>
+        <li><strong>Lifespan:</strong> 15 - 20 years</li>
+        <li><strong>Group:</strong> Mammal</li>
+        <li><strong>Color:</strong> BrownGreyRedWhiteTanOrange</li>
+        <li><strong>Skin Type:</strong> Fur</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Pygmy Marmoset (Finger Monkey)</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> South-America</li>
+        <li><strong>Type:</strong> Mammal</li>
+        <li><strong>Lifespan:</strong> 8-12 years</li>
+        <li><strong>Color:</strong> BrownGreyBlackWhiteTan</li>
+        <li><strong>Skin Type:</strong> Fur</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Spider Monkey</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Central-America</li>
+        <li><strong>Type:</strong> Mammal</li>
+        <li><strong>Lifespan:</strong> 15-27 years</li>
+        <li><strong>Color:</strong> BrownGreyBlackWhite</li>
+        <li><strong>Skin Type:</strong> Hair</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Squirrel Monkey</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Central-America</li>
+        <li><strong>Lifespan:</strong> 15 - 20 years</li>
+        <li><strong>Group:</strong> Mammal</li>
+        <li><strong>Color:</strong> GreyYellowBlackOlive</li>
+        <li><strong>Skin Type:</strong> Fur</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Vervet Monkey</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> Africa</li>
+        <li><strong>Lifespan:</strong> 12 - 24 years</li>
+        <li><strong>Group:</strong> Mammal</li>
+        <li><strong>Color:</strong> BrownGreyBlackSilverOlive</li>
+        <li><strong>Skin Type:</strong> Fur</li>
+      </ul>
+    </div>
+  </div>
+</li>
+<li class="cards__item">
+  <div class="card">
+    <div class="card__title">Woolly Monkey</div>
+    <div class="card__text">
+      <ul class="card__list">
+        <li><strong>Diet:</strong> Omnivore</li>
+        <li><strong>Location:</strong> South-America</li>
+        <li><strong>Type:</strong> Mammal</li>
+        <li><strong>Lifespan:</strong> 7-10 years</li>
+        <li><strong>Color:</strong> BrownGreyBlack</li>
+        <li><strong>Skin Type:</strong> Fur</li>
+      </ul>
+    </div>
+  </div>
+</li>
+        </ul>
+    </body>
+</html>
